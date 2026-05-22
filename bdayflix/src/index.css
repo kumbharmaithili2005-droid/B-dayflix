@@ -1,0 +1,282 @@
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,900,700&f[]=satoshi@700,500,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --netflix-red: #E50914;
+  --bg-dark: #0f0f0f;
+  --accent-glow: rgba(229, 9, 20, 0.3);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg-dark);
+  color: white;
+  font-family: 'Satoshi', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.font-display { font-family: 'Cabinet Grotesk', sans-serif; }
+
+/* Netflix-style hero title */
+.hero-title {
+  text-shadow: 2px 4px 12px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.5);
+  letter-spacing: -0.02em;
+}
+
+/* 3D Card Effect */
+.card-3d {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform-style: preserve-3d;
+  position: relative;
+}
+.card-3d:hover {
+  z-index: 50;
+  box-shadow: 0 30px 60px -15px rgba(0,0,0,0.9), 0 0 30px 0 var(--accent-glow);
+}
+
+/* Hero Gradient */
+.hero-gradient {
+  background: linear-gradient(to top, var(--bg-dark) 0%, transparent 60%),
+              linear-gradient(to right, var(--bg-dark) 0%, rgba(15,15,15,0.5) 40%, transparent 100%);
+}
+
+.perspective-container { perspective: 1200px; }
+
+/* Card Reflection Shine */
+.reflection {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+.card-3d:hover .reflection { left: 150%; }
+
+/* Float Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.float-animation { animation: float 3s ease-in-out infinite; }
+
+/* Hero Entrance */
+@keyframes fadeSlideLeft {
+  from { opacity: 0; transform: translateX(-2rem); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-hero { animation: fadeSlideLeft 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
+
+/* Card Entrance */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(2rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-card {
+  opacity: 0;
+  animation: fadeUp 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+/* Toast Animations */
+@keyframes toastEnter {
+  from { opacity: 0; transform: translateX(100px) scale(0.8); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+.toast-enter {
+  animation: toastEnter 0.4s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+/* Search Modal */
+@keyframes searchFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.search-modal-enter {
+  animation: searchFadeIn 0.3s ease forwards;
+}
+
+/* Notification Dropdown */
+@keyframes notifSlideDown {
+  from { opacity: 0; transform: translateY(-10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.notif-dropdown {
+  animation: notifSlideDown 0.2s ease forwards;
+}
+
+/* Mobile Menu */
+@keyframes mobileMenuEnter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.mobile-menu-enter {
+  animation: mobileMenuEnter 0.3s ease forwards;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Hide scrollbar for carousels */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Video player range inputs */
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #E50914;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Tabular numbers for countdown */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(229, 9, 20, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(229, 9, 20, 0.6); }
+}
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* ── Netflix TUDUM Intro ── */
+@keyframes introZoom {
+  0% { transform: scale(0.3); opacity: 0; filter: blur(20px); }
+  30% { transform: scale(1.1); opacity: 1; filter: blur(0); }
+  50% { transform: scale(1); }
+  80% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; filter: blur(10px); }
+}
+@keyframes introLine {
+  0% { width: 0; opacity: 0; }
+  30% { width: 0; opacity: 0; }
+  50% { width: 200px; opacity: 1; }
+  80% { width: 200px; opacity: 1; }
+  100% { width: 0; opacity: 0; }
+}
+@keyframes introBg {
+  0% { background: black; }
+  80% { background: black; }
+  100% { background: transparent; opacity: 0; }
+}
+.netflix-intro-bg {
+  animation: introBg 3.5s ease forwards;
+}
+.netflix-intro-logo {
+  animation: introZoom 3.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.netflix-intro-line {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #E50914, transparent);
+  border-radius: 999px;
+  animation: introLine 3.5s ease forwards;
+}
+
+/* ── Celebration Popup Animations ── */
+@keyframes celebBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-20px) scale(1.1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+.celebration-bounce {
+  display: inline-block;
+  animation: celebBounce 1s ease-in-out infinite;
+}
+
+@keyframes celebSlideUp {
+  from { opacity: 0; transform: translateY(40px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.celebration-slide-up {
+  animation: celebSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes celebTextGlow {
+  0%, 100% { text-shadow: 0 0 20px rgba(229,9,20,0.3); }
+  50% { text-shadow: 0 0 40px rgba(229,9,20,0.6), 0 0 80px rgba(229,9,20,0.2); }
+}
+.celebration-text {
+  animation: celebTextGlow 2s ease-in-out infinite;
+}
+
+.celebration-overlay {
+  animation: celebSlideUp 0.4s ease forwards;
+}
+
+/* ── Popup Animations ── */
+@keyframes popupBounceIn {
+  0% { opacity: 0; transform: scale(0.5) translateY(30px); }
+  50% { transform: scale(1.05) translateY(-5px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes popupOverlayFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.popup-bounce-in {
+  animation: popupBounceIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.popup-overlay-enter {
+  animation: popupOverlayFade 0.3s ease forwards;
+}
+
+/* ── Custom Profile Selector Animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-zoom-in {
+  animation: zoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes loadTimer {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+.animate-load-timer {
+  animation: loadTimer 1.5s linear forwards;
+}
