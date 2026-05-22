@@ -130,7 +130,7 @@ export const BIRTHDAY_WISHES = [
   {
     id: 'w1',
     author: 'Sanskruti',
-    avatar: '💗',
+    avatar: '👸🏻',
     relationship: 'Daughter',
     message: 'Happy birthday to the man who made me who I am today. Without you I would not exist. Thank you for standing with me in all these years and being such an inspiration. Promise me you would stay with me and act as my strong wall and I promise I would be with you through your lowest too... I love you ❤️🎂',
     color: 'from-pink-500 to-rose-600',
@@ -138,19 +138,19 @@ export const BIRTHDAY_WISHES = [
   {
     id: 'w2',
     author: 'Arya',
-    avatar: '🎂',
+    avatar: '👩🏻‍💻',
     relationship: 'Father',
     message: 'A belated Happy Birthday pappa. Your strength, guidance, and support have always been a big part of our lives. Thank you for always standing by us and teaching us the value of hard work and kindness. You are not just a great father but also a wonderful person who inspires everyone around him. Wishing you good health, happiness, and many more successful years ahead. Hope you had a fantastic birthday and an amazing year ahead.🌟',
     color: 'from-blue-500 to-indigo-600',
   },
-  // {
-  //   id: 'w3',
-  //   author: 'Best Friend',
-  //   avatar: '👯',
-  //   relationship: 'BFF Since Forever',
-  //   message: 'Remember that time we stayed up until 4 AM laughing about absolutely nothing? That\'s what you are to me — pure, unfiltered joy. Happy birthday to the person who makes every ordinary moment extraordinary! 🎉',
-  //   color: 'from-green-500 to-emerald-600',
-  // },
+  {
+    id: 'w3',
+    author: 'Vaishali',
+    avatar: '🫅🏻',
+    relationship: 'Wife',
+    message: 'Happy birthday dear redya.. we have been through our ups and downs and we have fought a lot but through all this we still stayed together and in the future lets stay together and prospere the land we have decided to make together. Lets complete our dreams together and pls pls stop snoringgg.',
+    color: 'from-green-500 to-emerald-600',
+  },
   // {
   //   id: 'w4',
   //   author: 'Sibling',
