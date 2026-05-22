@@ -113,7 +113,7 @@ export const FAVORITES_DATA = [
   {
     id: 'fav-3',
     title: 'The Crown',
-    genre: 'Drama • History • Royal',
+    genre: 'Drama • History • Royal Affairs',
     image: 'https://images.unsplash.com/photo-1524712245354-2c4e5e7124c5?auto=format&fit=crop&q=80&w=800',
     // video: VIDEO_URLS[2],
   },
